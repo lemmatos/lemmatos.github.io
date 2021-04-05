@@ -1,0 +1,69 @@
+@charset "utf-8";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css");
+
+/* *{
+  border: solid 1px fuchsia;
+}  */
+/* https://code-boxx.com/create-rounded-images-css/#sec-basic */
+
+.img_round{}
+
+.featurete-figure{
+  height: 100%;
+  width: auto;
+  flex-grow: 
+}
+
+.featurette-img{
+  height: 15rem;
+  width: 15rem;
+  object-fit: contain;
+  background-color: #555f55A0;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.bg-alphagray{
+  background-color: #A0AFA0A0 ;
+}
+
+.shadow-small{
+  box-shadow: 0px 0px 5px 0px #555F55;
+}
+
+/* -------------------------------------------------
+ RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 576px) {
+  .featurette-img{
+    height: 18em;
+    width: 18em;
+  }
+}
+
+@media (min-width: 768px) {
+  .featurette-img{
+    height: 16em;
+    width: 16em;
+  }
+}
+
+@media (min-width: 992px) {
+  .featurette-img{
+    height: 22em;
+    width: 22em;
+  }
+}
+
+@media (min-width: 870px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
