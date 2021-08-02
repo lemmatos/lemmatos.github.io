@@ -1,0 +1,92 @@
+body {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  color: #F38A38;
+  min-height: 100vh;
+  margin: 0;
+}
+
+
+
+main {
+  flex: 1;
+  color: #df7a2b;
+  background-color: #A0AFA0;
+}
+
+nav {
+  background-color: #555f55;
+  color: #F38A38;
+  width: calc(100% - 1.6rem);
+  align-self: end;
+}
+
+footer {
+  background-color: #555f55;
+  color: #F38A38;
+  width: calc(100% - 1.6rem);
+  align-self: end;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: #df7a2b;
+}
+
+button {
+  color: #df7a2b;
+  font-weight:bold ;
+  border: none;
+  border-radius: .2rem;
+  padding: .5rem;
+  margin-inline: .5rem;
+}
+
+button:hover{
+  background-color: #c9d1c9;
+}
+
+button:active{
+  color: #aa6027;
+  background-color: #A0AFA0;
+}
+
+/* Classes */
+
+.padding-regular {
+  padding: 0.8rem;
+}
+
+
+.card {
+  display: inline-block;
+  background-color:  whitesmoke;
+  box-shadow: 0 0 1rem darkgrey;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  width: 200px;
+  height: 200px;
+  margin: 1rem;
+  text-align: center;
+}
+
+.card:hover {
+  background-color: gainsboro;
+  color: #df7a2b;
+}
+.card:active {
+  background-color: silver;
+  box-shadow: 0 0 0.2rem dimgray;
+}
+
+.card h3 {
+  margin: 1rem;
+}
+.card img {
+  max-height: 100px;
+}

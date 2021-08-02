@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link type="text/css" rel="stylesheet" href="styles.css"/>
+  <link type="text/css" rel="stylesheet" href="../assets/styles/main_styles.css"/>
+
+  <title>Sports News | L. M. de Matos & Beyond</title>
+</head>
+<body class="bg-alphagray">
+
+  <nav class="padding-regular">
+
+    <h1>Sport News</h1>
+    
+    <button onclick="addContent()">Add Content</button>
+    <button onclick="getAllSports()">Fetch Sports</button>
+    <button onclick="getAllLeagues()">Fetch Leagues</button>
+    <button onclick="clearContent()">Clear</button>
+  </nav>
+
+  <main class="padding-regular">
+      <div id="content">
+      </div>
+  </main>
+
+  <footer class="padding-regular">
+    <h3>API link</h3>
+    <p>
+      <a href="https://www.thesportsdb.com/api.php">API Reference</a>
+    </p>
+    <p>
+      <a href="https://www.thesportsdb.com/api.php">The SportsDB</a>
+    </p>
+  </footer>
+
+</body>
+<script src="./scripts.js"></script>
+</html>
