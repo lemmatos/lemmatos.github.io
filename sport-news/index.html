@@ -15,11 +15,25 @@
   <nav class="padding-regular">
 
     <h1>Sport News</h1>
+
+    <div class="site_description">
+      <h4>
+        This is a very simple example of a one page app using only JavaScript.
+      </h3>
+      <p>
+        All is done with JavaScript and a bit of css. The data is fetched from the API provider using the Fetch API (sorry I.E. 😕).
+      </p>
+      <p>
+        New data is only fetched if consulting a new sport or league. Otherwise, a cache is used, to reduce the number of API calls.
+      </p>
+      <p>
+        Clicking a sport will show its leagues. Clicking a league will show the teams. Clicking a team will go back to the sports.
+      </p>
+    </div>
     
-    <button onclick="addContent()">Add Content</button>
-    <button onclick="getAllSports()">Fetch Sports</button>
-    <button onclick="getAllLeagues()">Fetch Leagues</button>
-    <button onclick="clearContent()">Clear</button>
+    <button onclick="getAllSports()">Sports</button>
+    <button onclick="getAllLeagues()">All Leagues</button>
+    <button onclick="clearContent()">Clear list</button>
   </nav>
 
   <main class="padding-regular">
@@ -28,13 +42,15 @@
   </main>
 
   <footer class="padding-regular">
-    <h3>API link</h3>
-    <p>
-      <a href="https://www.thesportsdb.com/api.php">API Reference</a>
-    </p>
-    <p>
-      <a href="https://www.thesportsdb.com/api.php">The SportsDB</a>
-    </p>
+    <div>
+      <h3>API link</h3>
+      <p>
+        <a href="https://www.thesportsdb.com/api.php">API Reference</a>
+      </p>
+      <p>
+        <a href="https://www.thesportsdb.com/api.php">The SportsDB</a>
+      </p>
+    </div>
   </footer>
 
 </body>

@@ -29,8 +29,17 @@ footer {
   align-self: end;
 }
 
+h4 {
+  color: rgb(238, 184, 143);
+}
+
+p {
+  color: whitesmoke;
+  line-height: 0.8rem;
+}
+
 a {
-  color: white;
+  color: whitesmoke;
 }
 
 a:hover {
@@ -43,7 +52,7 @@ button {
   border: none;
   border-radius: .2rem;
   padding: .5rem;
-  margin-inline: .5rem;
+  margin-inline: .2rem;
 }
 
 button:hover{
@@ -56,6 +65,10 @@ button:active{
 }
 
 /* Classes */
+
+.site_description {
+  margin-bottom: 2rem;
+}
 
 .padding-regular {
   padding: 0.8rem;
