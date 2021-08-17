@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+:root {
+  --inline-padding: 2rem
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -5,9 +12,9 @@ body {
   color: #F38A38;
   min-height: 100vh;
   margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
 }
-
-
 
 main {
   flex: 1;
@@ -18,24 +25,37 @@ main {
 nav {
   background-color: #555f55;
   color: #F38A38;
-  width: calc(100% - 1.6rem);
+  width: calc(100% - 2 * var(--inline-padding));
   align-self: end;
 }
 
 footer {
   background-color: #555f55;
   color: #F38A38;
-  width: calc(100% - 1.6rem);
+  width: calc(100% - 2 * var(--inline-padding));
   align-self: end;
+}
+
+h1,h2,h3,h4 {
+  font-family: "Lato", "sans-serif";
+}
+h1 {
+  font-style: italic;
+  font-size: 3rem;
+  line-height: 1.5rem;
+  margin-top: 1rem;
 }
 
 h4 {
   color: rgb(238, 184, 143);
+  margin-left: 1rem;
 }
 
 p {
   color: whitesmoke;
   line-height: 0.8rem;
+  font-size: 0.8rem;
+  margin-left: 2rem;
 }
 
 a {
@@ -49,6 +69,7 @@ a:hover {
 button {
   color: #df7a2b;
   font-weight:bold ;
+  font-size: 0.9em;
   border: none;
   border-radius: .2rem;
   padding: .5rem;
@@ -71,7 +92,8 @@ button:active{
 }
 
 .padding-regular {
-  padding: 0.8rem;
+  padding-block: 1rem;
+  padding-inline: var(--inline-padding);
 }
 
 
