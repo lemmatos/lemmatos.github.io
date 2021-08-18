@@ -15,5 +15,5 @@
 ![And Beyond!](./and_beyond.jpg)
 
 # Under construction...
-- [Simple one page app using JavaScript :arrow_right:](https://lemmatos.github.io/sport-news/)
+- [Simple one page app using JavaScript :arrow_right:](https://lemmatos.github.io/sport-news/index.html)
 
