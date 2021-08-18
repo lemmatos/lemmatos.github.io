@@ -53,14 +53,14 @@ const appendCard = (onClick, title, imageUrl) => {
   const newImage = document.createElement('img')
 
   newDiv.classList.add('card')
-  newH3.append(title)
+  newH3.innerText = title
   
   if(imageUrl) {
     newDiv.appendChild(newImage)
     newImage.setAttribute('src', imageUrl)
     newImage.setAttribute('alt', `${title} image`)
   }
-  // newLink.setAttribute('href', ``)
+  
   newDiv.appendChild(newH3)
   newDiv.onclick = onClick
 
@@ -71,10 +71,10 @@ const appendMainHeader = (title, description) => {
   const newH2 = document.createElement('h2')
   const newDescription = document.createElement('p')
 
-  newH2.append(title)
+  newH2.innerText = title
 
   if (description){
-    newDescription.append(description)
+    newDescription.innerText = description
   }
 
   mainHeader.appendChild(newH2)

@@ -20,15 +20,21 @@
       <h4>
         This is a very simple example of a one page app using only JavaScript.
       </h4>
-      <p>
-        All is done with JavaScript and a bit of css. The data is fetched from the API provider using the Fetch API (sorry I.E. 😕).
-      </p>
-      <p>
-        New data is only fetched if consulting a new sport or league. Otherwise, a cache is used, to reduce the number of API calls.
-      </p>
-      <p>
-        Clicking a sport will show its leagues. Clicking a league will show the teams. Clicking a team will show the leagues again.
-      </p>
+      <div class="description_details">
+        <ol>
+          <li>Clicking a sport will show its leagues.</li>
+          <li>Clicking a league will show the teams.</li>
+          <li>Clicking a team will show the leagues again.</li>
+        </ol>
+        <ul>
+          <li>New data is only fetched if consulting a new sport or league.</li>
+          <li>Otherwise, a cache is used, to reduce the number of API calls.</li>
+        </ul>
+        <ul>
+          <li>All is done with JavaScript and a bit of css.</li>
+          <li>The data is fetched from the API provider using the <i>fetch</i> (sorry I.E. 😕).</li>
+        </ul>
+      </div>
     </div>
     
     <button onclick="getAllSports()">Sports</button>
