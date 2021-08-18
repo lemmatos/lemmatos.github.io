@@ -9,6 +9,15 @@ let sports = []
 let leagues = []
 let teams = []
 
+const DATA_TYPES = {
+  SPORT: "SPORT",
+  LEAGUE: "LEAGUE",
+  TEAM: "TEAM",
+}
+
+// -----------------------------
+// DOM manipulation
+// -----------------------------
 
 const addContent = (text) => {
   const newParagraph=document.createElement('p')
@@ -24,8 +33,6 @@ const clearContent = () => {
     content.lastChild.remove()
   }
 }
-
-
 
 const appendCard = (onClick, title, imageUrl) => {
   const newDiv = document.createElement('div')
@@ -47,45 +54,61 @@ const appendCard = (onClick, title, imageUrl) => {
   content.appendChild(newDiv)
 }
 
+const generateCards = (type) => {
+  console.log("Generating cards...")
+  console.log(type)
+  switch (type){
+    case DATA_TYPES.SPORT:
+      console.log(sports)
+      sports.forEach(item => item.strSport && item.strSport && item.strSportThumb && 
+        appendCard(() => getLeagues(item.strSport), item.strSport,item.strSportThumb)
+      )
+      break;
+    case DATA_TYPES.LEAGUE:
+      console.log(leagues)
+      leagues.forEach(item => appendCard(() => getLeagueTeams(item.idLeague), item.strLeague, item.strBadge))
+    break;
+    case DATA_TYPES.TEAM:
+      console.log(teams)
+      teams.forEach(item => appendCard(() => getLeagues(item.strSport), item.strTeam, item.strTeamBadge))
+      break;
+    default:
+      break;
+  }
+
+}
+
+// -----------------------------
+// Data fetching
+// -----------------------------
+
 const getAllSports = async () => {
   clearContent()
   if (sports.length > 0){
     console.log("Loading sports from cache")
-    console.log(sports)
-    sports.forEach(item => item.strSport && item.strSport && item.strSportThumb && 
-      appendCard(() => getAllLeagues(item.strSport), item.strSport,item.strSportThumb)
-    )
+    generateCards(DATA_TYPES.SPORT)
     return sports
   } 
   else {
-    const newSports = fetch(`${apiAddress}/all_sports.php`,
-      {
-      //  headers :{
-      //   "x-auth-token": "194378278e394272b97aceb6b9da3d19",
-      //  },
-      })
+    const newSports = fetch(`${apiAddress}/all_sports.php`, {})
       .then(res => {
           console.log("Fetching data", res)
           return res.json()
       })
       .then(data => {
-        console.log(data)
         sports = data.sports
-        data.sports.forEach(item => item.strSport && item.strSport && item.strSportThumb && 
-            appendCard(() => getAllLeagues(item.strSport), item.strSport,item.strSportThumb)
-        )
+        generateCards(DATA_TYPES.SPORT)
       })
       .catch(err => console.log("Something went wrong fetching the data...", err))
     return newSports
   }
 }
 
-const getAllLeagues = async (sportName) => {
+const getLeagues = async (sportName) => {
   clearContent()
   if (leagues.length > 0 && leagues[0].strSport === sportName){
     console.log("Loading leagues from cache")
-    console.log(leagues)
-    leagues.forEach(item => appendCard(() => getLeagueTeams(item.idLeague), item.strLeague, item.strBadge))
+    generateCards(DATA_TYPES.LEAGUE)
     return leagues
   }
   else {
@@ -95,14 +118,13 @@ const getAllLeagues = async (sportName) => {
           return res.json()
         })
         .then(data => {
-          console.log(data)
           if (sportName){
             leagues = data.countrys
-            data.countrys.forEach(item => appendCard(() => getLeagueTeams(item.idLeague), item.strLeague, item.strBadge))
+            generateCards(DATA_TYPES.LEAGUE)
           }
           else {
             leagues = data.leagues
-            data.leagues.forEach(item => appendCard(() => getLeagueTeams(item.idLeague), item.strLeague))
+            generateCards(DATA_TYPES.LEAGUE)
           }
         })
         .catch(err => console.log("Something went wrong fetching the data...", err))
@@ -114,8 +136,7 @@ const getLeagueTeams = async (idLeague) => {
   clearContent()
   if (teams.length > 0 && teams[0].idLeague === idLeague){
     console.log("Loading teams from cache")
-    console.log(teams)
-    teams.forEach(item => appendCard(getAllSports, item.strTeam, item.strTeamBadge))
+    generateCards(DATA_TYPES.TEAM)
     return teams
   }
   else {
@@ -125,10 +146,9 @@ const getLeagueTeams = async (idLeague) => {
           return res.json()
         })
         .then(data => {
-          console.log(data)
           if (idLeague){
             teams = data.teams
-            data.teams.forEach(item => appendCard(() => getAllLeagues(item.strSport), item.strTeam, item.strTeamBadge))
+            generateCards(DATA_TYPES.TEAM)
           }
           else {
             throw `League ID provided was "${idLeague}"`
