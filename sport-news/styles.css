@@ -27,6 +27,8 @@ nav {
   color: #F38A38;
   width: calc(100% - 2 * var(--inline-padding));
   align-self: end;
+  box-shadow: 0px 0px 5px 2px dimgray;
+  z-index: 1;
 }
 
 footer {
@@ -34,6 +36,8 @@ footer {
   color: #F38A38;
   width: calc(100% - 2 * var(--inline-padding));
   align-self: end;
+  box-shadow: 0px 0px 5px 2px dimgray;
+
 }
 
 h1,h2,h3,h4 {
@@ -44,6 +48,12 @@ h1 {
   font-size: 3rem;
   line-height: 1.5rem;
   margin-top: 1rem;
+}
+
+h2 {
+  font-style: italic;
+  font-size: 2.3rem;
+  line-height: 1rem;
 }
 
 h4 {
@@ -74,18 +84,25 @@ button {
   border-radius: .2rem;
   padding: .5rem;
   margin-inline: .2rem;
+  box-shadow: 0px 0px 6px darkslategrey;
 }
 
 button:hover{
-  background-color: #c9d1c9;
+  background-color: gainsboro;
+  box-shadow: 0px 0px 3px darkslategrey;
 }
 
 button:active{
   color: #aa6027;
-  background-color: #A0AFA0;
+  background-color: silver;
+  box-shadow: 0px 0px 1px black;
 }
 
+
+/* --------------------------------- */
 /* Classes */
+/* --------------------------------- */
+
 
 .site_description {
   margin-bottom: 2rem;
@@ -100,7 +117,7 @@ button:active{
 .card {
   display: inline-block;
   background-color:  whitesmoke;
-  box-shadow: 0 0 1rem darkgrey;
+  box-shadow: 0 0 8px dimgray;
   border-radius: 0.5rem;
   overflow: hidden;
 
@@ -113,10 +130,11 @@ button:active{
 .card:hover {
   background-color: gainsboro;
   color: #df7a2b;
+  box-shadow: 0 0 4px darkslategrey;
 }
 .card:active {
   background-color: silver;
-  box-shadow: 0 0 0.2rem dimgray;
+  box-shadow: 0 0 1px black;
 }
 
 .card h3 {
@@ -124,4 +142,16 @@ button:active{
 }
 .card img {
   max-height: 100px;
+}
+
+/* --------------------------------- */
+/* IDs */
+/* --------------------------------- */
+#main_header {
+  background-color: #c9d1c9aa;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+#content {
+  text-align: center;
 }
