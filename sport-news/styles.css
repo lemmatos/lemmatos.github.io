@@ -2,7 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 :root {
-  --inline-padding: 2rem
+  --inline-padding: 2rem;
+  --bg-dark: #555f55;
+  --bg-dark-alpha: #555f5588;
 }
 
 body {
@@ -23,7 +25,7 @@ main {
 }
 
 nav {
-  background-color: #555f55;
+  background-color: var(--bg-dark);
   color: #F38A38;
   width: calc(100% - 2 * var(--inline-padding));
   align-self: end;
@@ -32,7 +34,7 @@ nav {
 }
 
 footer {
-  background-color: #555f55;
+  background-color: var(--bg-dark);
   color: #F38A38;
   width: calc(100% - 2 * var(--inline-padding));
   align-self: end;
@@ -115,7 +117,8 @@ button:active{
 
 
 .card {
-  display: inline-block;
+  /* display: inline-block; */
+  
   background-color:  whitesmoke;
   box-shadow: 0 0 8px dimgray;
   border-radius: 0.5rem;
@@ -148,10 +151,27 @@ button:active{
 /* IDs */
 /* --------------------------------- */
 #main_header {
-  background-color: #c9d1c9aa;
+  margin: 0 auto;
+  background-color: var(--bg-dark-alpha);
   border-radius: 0.5rem;
   padding: 1rem;
+  padding-inline: var(--inline-padding);
 }
+
+#main_header h2 {
+  color: rgb(238, 184, 143);
+}
+#main_header p {
+  margin: 0 auto;
+  padding-inline: var(--inline-padding);
+  font-size: 0.8rem;
+  line-height: 1.1rem;
+}
+
 #content {
-  text-align: center;
+  margin: 0 auto;
+  padding: var(--inline-padding);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
 }
