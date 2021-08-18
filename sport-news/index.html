@@ -27,28 +27,28 @@
         New data is only fetched if consulting a new sport or league. Otherwise, a cache is used, to reduce the number of API calls.
       </p>
       <p>
-        Clicking a sport will show its leagues. Clicking a league will show the teams. Clicking a team will go back to the sports.
+        Clicking a sport will show its leagues. Clicking a league will show the teams. Clicking a team will show the leagues again.
       </p>
     </div>
     
     <button onclick="getAllSports()">Sports</button>
     <button onclick="getLeagues()">All Leagues</button>
-    <button onclick="clearContent()">Clear list</button>
+    <button onclick="clearMain()">Clear list</button>
   </nav>
 
   <main class="padding-regular">
-      <div id="content">
-      </div>
+      <div id="main_header"></div>   
+      <div id="content"></div>    
   </main>
 
   <footer class="padding-regular">
     <div>
       <h3>API link</h3>
       <p>
-        <a href="https://www.thesportsdb.com/api.php">API Reference</a>
+        <a href="https://www.thesportsdb.com/">The SportsDB</a>
       </p>
       <p>
-        <a href="https://www.thesportsdb.com/api.php">The SportsDB</a>
+        <a href="https://www.thesportsdb.com/api.php">API Reference</a>
       </p>
     </div>
   </footer>
