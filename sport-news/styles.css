@@ -1,9 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+/*--------------------------------------------------
+ GLOBAL STYLES
+ 
+ Shouldn't be here, as I'm using the main_styles sheet.
+ In a future update I shall either
+ a. turn into classes
+ b. stop using the main_styles
+-------------------------------------------------- */
+
 :root {
   --inline-padding: 2rem;
-  --bg-dark: #555f55;
+  --bg-dark: var(--color-black);
   --bg-dark-alpha: #555f5588;
 }
 
@@ -11,7 +20,7 @@ body {
   display: flex;
   flex-direction: column;
   flex: auto;
-  color: #F38A38;
+  color: var(--color-secondary);
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -20,26 +29,25 @@ body {
 
 main {
   flex: 1;
-  color: #df7a2b;
-  background-color: #A0AFA0;
+  color: var(--color-secondary-dark);
+  background-color: var(--color-lightgray);
 }
 
 nav {
   background-color: var(--bg-dark);
-  color: #F38A38;
+  color: var(--color-secondary);
   width: calc(100% - 2 * var(--inline-padding));
   align-self: end;
-  box-shadow: 0px 0px 5px 2px dimgray;
+  box-shadow: 0px 0px 5px 2px var(--color-black);
   z-index: 1;
 }
 
-footer {
+.footer-div {
   background-color: var(--bg-dark);
-  color: #F38A38;
+  color: var(--color-secondary);
   width: calc(100% - 2 * var(--inline-padding));
   align-self: end;
-  box-shadow: 0px 0px 5px 2px dimgray;
-
+  box-shadow: 0px 0px 5px 2px var(--color-black);
 }
 
 h1,h2,h3,h4 {
@@ -58,28 +66,20 @@ h2 {
   line-height: 1rem;
 }
 
-h4 {
-  color: rgb(238, 184, 143);
+nav h4 {
+  color: var(--color-secondary-light);
   margin-left: 1rem;
 }
 
 p {
-  color: whitesmoke;
+  color: var(--color-white);
   line-height: 0.8rem;
   font-size: 0.8rem;
   margin-left: 2rem;
 }
 
-a {
-  color: whitesmoke;
-}
-
-a:hover {
-  color: #df7a2b;
-}
-
 button {
-  color: #df7a2b;
+  color: var(--color-secondary-dark);
   font-weight:bold ;
   font-size: 0.9em;
   border: none;
@@ -95,15 +95,15 @@ button:hover{
 }
 
 button:active{
-  color: #aa6027;
+  color: var(--color-secondary-dark);
   background-color: silver;
-  box-shadow: 0px 0px 1px black;
+  box-shadow: 0px 0px 1px var(--color-black);
 }
 
 
-/* --------------------------------- */
-/* Classes */
-/* --------------------------------- */
+/*--------------------------------------------------
+ CLASSES
+-------------------------------------------------- */
 
 
 .site_description {
@@ -134,7 +134,7 @@ button:active{
 .card {
   /* display: inline-block; */
   
-  background-color:  whitesmoke;
+  background-color:  var(--color-white);
   box-shadow: 0 0 8px dimgray;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -145,13 +145,13 @@ button:active{
 }
 
 .card:hover {
-  background-color: gainsboro;
-  color: #df7a2b;
+  background-color: var(--color-light-gray);
+  color: var(--color-secondary-dark);
   box-shadow: 0 0 4px darkslategrey;
 }
 .card:active {
   background-color: silver;
-  box-shadow: 0 0 1px black;
+  box-shadow: 0 0 1px var(--color-black);
 }
 
 .card h3 {
@@ -161,19 +161,19 @@ button:active{
   max-height: 80px;
 }
 
-/* --------------------------------- */
-/* IDs */
-/* --------------------------------- */
+/*--------------------------------------------------
+ IDs
+-------------------------------------------------- */
 #main_header {
   margin: 0 auto;
-  background-color: var(--bg-dark-alpha);
+  background-color: var(--color-darkgray);
   border-radius: 0.5rem;
   padding: 1rem;
   padding-inline: var(--inline-padding);
 }
 
 #main_header h2 {
-  color: rgb(238, 184, 143);
+  color: var(--color-secondary-light);
 }
 #main_header p {
   margin: 0 auto;

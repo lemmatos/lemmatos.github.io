@@ -6,19 +6,96 @@
 }  */
 /* https://code-boxx.com/create-rounded-images-css/#sec-basic */
 
+/*--------------------------------------------------
+ GLOBAL STYLES
+-------------------------------------------------- */
+:root {
+  --color-secondary: #FF8020;
+  --color-secondary-light: #FFB153;
+  --color-secondary-dark: #C55000;
+  --color-primary: #685088;
+  --color-primary-light: #9880B0;
+  --color-primary-dark: #3C285B;
+  --color-black: #202030;
+  --color-darkgray: #505060;
+  --color-gray: #A0A0B0;
+  --color-lightgray: #DFDDDA;
+  --color-white: #FFFDFA;
+}
+
+body {
+  padding-top: 3rem;
+  /* padding-bottom: 3rem; */
+  /* color: #df7a2b; */
+  color: var(--color-black);
+  background-color: var(--color-white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-secondary)
+}
+
+a {
+  color: var(--color-secondary);
+}
+a:visited {
+  color: var(--color-secondary-dark);
+}
+a:hover {
+  color: var(--color-secondary-light);
+}
+
+footer a {
+  color: var(--color-white);
+}
+footer a:visited {
+  color: var(--color-gray);
+}
+footer a:hover {
+  color: var(--color-lightgray);
+}
+
+/* header{
+  color: #F38A38;
+} */
+
+footer{
+  color: var(--color-secondary);
+  background-color: var(--color-black);
+  width:100%;
+  /* margin-top: 3rem; */
+  padding: 2rem;
+  padding-bottom: 0;
+}
+
+/*--------------------------------------------------
+ CLASSES - Bootstrap overwritting
+-------------------------------------------------- */
+
+
+.btn-secondary:visited {
+  color: var(--color-lightgray);
+}
+.btn-secondary:hover {
+  color: var(--color-secondary-light);
+}
+
+/*--------------------------------------------------
+ CLASSES
+-------------------------------------------------- */
+
 .img_round{}
 
-.featurete-figure{
+.featurete-figure {
   height: 100%;
   width: auto;
-  flex-grow: 
 }
 
 .featurette-img{
   height: 15rem;
   width: 15rem;
   object-fit: contain;
-  background-color: #555f55A0;
+  background-color: #9880B010;
 }
 
 .bd-placeholder-img {
@@ -30,11 +107,11 @@
 }
 
 .bg-alphagray{
-  background-color: #A0AFA0A0 ;
+  background-color: #9880B0A0 ;
 }
 
 .shadow-small{
-  box-shadow: 0px 0px 5px 0px #555F55;
+  box-shadow: 0px 0px 5px 0px var(--color-black);
 }
 
 /* -------------------------------------------------
